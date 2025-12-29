@@ -209,12 +209,26 @@
       <div class="inner">
         <h2>AFROBOT: Autonomous Drive Pet</h2>
         <p>
-          AfroBot is an autonomous mobile robot designed to track a dark-green object using a Pixy2 vision sensor
-          while avoiding obstacles with infrared distance sensors. The system combines analog signal conditioning,
-          PWM motor control, and a subsumption-based behavior architecture to coordinate Cruise, Track, and Escape behaviors.
-          The robot successfully executed all behaviors: maintaining straight motion, detecting obstacles at ~11 cm, and tracking a green object up to 1 meter away. 
-          Despite wiring failures and sensor replacements late in development, AfroBot ultimately operated reliably and met all project requirements.
-          In the lines below, we will explore the system design, methods, challenges, and results of this project.
+          <strong> AFROBOT is more than a class project, it’s the system I spent the most time thinking about, breaking, rebuilding, and refining. </strong>
+
+            Designed as an autonomous drive “pet,” AFROBOT follows a dark-green object using a Pixy2 vision sensor while continuously protecting itself from obstacles through infrared distance sensing. 
+          Under the hood, it combines analog signal conditioning, PWM motor control, and a subsumption-based behavior architecture that allows safety behaviors to override goal-driven motion in real time.
+
+          
+            What makes this project special to me is not just that it worked, it’s how much time went into making it work. 
+          I spent months thinking through the architecture, behavior priorities, and circuit design long before final assembly, and even more time debugging real-world failures like wiring issues and damaged sensors near the deadline.
+            
+           
+          AFROBOT successfully demonstrated stable cruising, reliable obstacle detection at approximately 11 cm, and smooth object tracking up to one meter. 
+          Despite late-stage rebuilds and component replacements, the final system operated reliably and met all performance requirements.
+
+          
+            This project also became the heart of this portfolio website. 
+          I revisited AFROBOT while designing this site, using it as a benchmark for how I want to present my engineering work: 
+          clearly, honestly, and with enough depth to show the thinking behind every decision.
+
+          
+            The sections below walk through the system design, methods, challenges, and lessons learned from building AFROBOT.
         </p>
       </div>
     </section>
@@ -224,14 +238,18 @@
         <div class="inner">
           <h2>System Overview</h2>
           <ul>
-            <li><strong>Power:</strong> 7.2V NiMH battery regulated to 5V</li>
-            <li><strong>Sensing:</strong> Sharp IR distance sensors, Pixy2 camera</li>
-            <li><strong>Control:</strong> Adafruit Metro Mini microcontroller</li>
-            <li><strong>Actuation:</strong> Dual DC motors with H-bridge driver</li>
-            <li><strong>Behavior:</strong> Circuit board and electronics components such as resistors, capacitors, Op-amps etc.</li>
+            <p> AFROBOT was designed as a tightly integrated electromechanical system where sensing, control, and actuation continuously 
+              interact rather than operating in isolation. 
+              Every subsystem was chosen and tuned based on how it affected overall behavior and reliability.</p>
+            
+            <li><strong>Power:</strong> A 7.2V NiMH battery regulated to 5V supplies both logic and motor control while maintaining electrical stability under load.</li>
+            <li><strong>Sensing:</strong> SSharp infrared distance sensors provide proximity feedback for obstacle avoidance, while a Pixy2 vision sensor outputs analog position data for object tracking.</li>
+            <li><strong>Control:</strong> An Adafruit Metro Mini microcontroller runs a non-blocking control loop that evaluates all behaviors continuously.</li>
+            <li><strong>Actuation:</strong> Dual DC motors driven through an H-bridge execute speed and direction commands derived from behavior arbitration.</li>
+            <li><strong>Behavior:</strong> Discrete components such as resistors, capacitors, and LM324 op-amps are used for signal conditioning, filtering, and amplification to ensure reliable sensor inputs.</li>
           </ul>
 
-          <u><strong>ELECTRONIC SCHEMATIC:</strong></u>
+          <u>The block diagram below illustrates how power, sensing, control, and actuation are connected into a single autonomous system.</u>
           <div class="image block"> <img src="../images/circuit block.png" alt="SYSTEM BLOCK DIAGRAM" /></div>
         </div>
     </section>
@@ -244,10 +262,12 @@
        <p>
         <h3> I- IR Sensor & Amplifier Circuit</h3>
         
-          Infrared distance sensors output a nonlinear voltage proportional to distance.
-          Each Sharp IR sensor outputs 0.03–3.1 V depending on distance.
-          Non-inverting LM324 op-amp circuits were used to amplify and stabilize these signals
-          for reliable obstacle detection at approximately 11 cm.
+          The infrared distance sensors output a nonlinear voltage that varies with distance, which makes them unreliable if connected directly to the microcontroller. 
+         To address this, non-inverting LM324 op-amp circuits were used to amplify and stabilize the signals.
+         
+
+Each sensor outputs approximately 0.03 V to 3.1 V depending on distance. The amplifier gain was tuned so that obstacles 
+         at roughly 11 cm reliably crossed the escape threshold, enabling consistent obstacle avoidance behavior without false triggers.
         </p>
 
         <div><u> IR SENSOR schematic: </u></div>
@@ -258,11 +278,13 @@
         <p>
           <h3> II- Pixy2 Tracking Circuit</h3>
           
-          The Pixy2 camera outputs an analog 0–3.3 V signal representing horizontal object position.
-          A differential amplifier converted this signal into steering corrections for left and right motors:
-          <li> If object is left → slow left motor, speed right motor </li>
-          <li> If object is right → reverse </li>
-          <li> If object centered → equal speed </li>
+          The Pixy2 camera provides analog voltages representing the horizontal position of a tracked object. 
+          A differential amplifier converts this positional difference into steering corrections rather than absolute motor commands
+          <li> Object left → left motor slows, right motor speeds up</li>
+          <li>Object right → right motor slows, left motor speeds up </li>
+          <li> Object centered → both motors run at equal speed </li>
+
+          This approach produces smooth, proportional steering instead of abrupt corrections, which improved tracking stability during motion.
           </p>
          <div><u> Pixy Camera schematic: </u></div>
         <div class="image"> <img src="../images/pixy camera circuit.png" alt="pixy camera" />
@@ -270,8 +292,11 @@
 
         <p>
         <h3> III- Motor Control & PWM</h3> 
-          DC motors were driven through an H-bridge using PWM signals generated by the microcontroller.
-          Speed tuning compensated for mechanical imbalance between wheels.
+          DC motors were driven through an H-bridge using PWM signals generated by the microcontroller. 
+          During testing, mechanical differences between motors caused noticeable drift, even under identical PWM commands.
+
+          Rather than treating this as a flaw, asymmetric PWM tuning was intentionally introduced to compensate for hardware imbalance 
+          a practical reminder that real systems rarely behave like ideal models.
         </p>
        
         <div><u> H-bridge DC motor Configuration: </u></div>
@@ -510,8 +535,8 @@
     <header class="major">
       <h2>Results & Performance</h2>
       <p>
-        The AFROBOT system was evaluated through controlled bench tests
-        and real-world navigation scenarios.
+        AFROBOT was evaluated through a combination of bench testing and real-world navigation trials. 
+        Performance was measured not only by whether behaviors activated, but by how reliably and smoothly they transitioned during motion.
       </p>
     </header>
 
@@ -670,6 +695,7 @@
     <h2>Future Work</h2>
 
     <p>
+      While AFROBOT is a reactive system, it provides a strong foundation for more adaptive autonomy.
       Future development will focus on evolving the system from a purely reactive robot
       into a more adaptive autonomous platform.
     </p>
@@ -699,13 +725,11 @@
       <div class="inner">
         <h2>Conclusion</h2>
        <p>
-          The AFROBOT project demonstrates the successful integration of sensing, analog signal
-          conditioning, and behavior-based control into a cohesive autonomous system.
-          By leveraging a subsumption architecture, the robot achieves responsive and reliable
-          operation in dynamic environments while prioritizing safety-critical behaviors.
-          Beyond functional performance, the project emphasized real-world engineering challenges
-          such as system robustness, hardware variability, and behavior arbitration—reinforcing
-          the importance of disciplined design in autonomous robotics.
+          AFROBOT demonstrates the successful integration of sensing, analog signal conditioning, and behavior-based control into a cohesive autonomous system.
+
+By leveraging a subsumption architecture, the robot achieves responsive, reliable operation while prioritizing safety-critical behaviors in dynamic environments. Beyond functional performance, this project emphasized real-world engineering challenges such as wiring robustness, hardware variability, and behavior arbitration — lessons that cannot be learned from simulation alone.
+
+More than anything, AFROBOT represents how I approach engineering: build, test, fail, fix, and iterate until the system works not just once, but reliably.
         </p>
       </div>
     </section>
@@ -774,5 +798,6 @@
  
 </body>
 </html>
+
 
 
