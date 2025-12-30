@@ -161,10 +161,10 @@
     <!-- Overview -->
     <h3 class="major">Project Overview</h3>
     <p>
-      Boe-Bot King is an autonomous mobile robot designed to follow a predefined track
-      using dual QTI infrared sensors. The project emphasizes reactive sensor-based
-      decision logic, structured motion control, and reliable recovery behaviors
-      during navigation.
+      Boe-Bot King is an autonomous line-following robot built to explore reactive sensor-based control and real-time decision making. 
+      Using dual QTI infrared sensors and simple collision whiskers, the robot continuously interprets its environment and selects motion behaviors without relying on complex state machines or path planning.
+
+      The project emphasizes reliability, predictability, and fast response — core principles behind many real-world autonomous systems.
     </p>
 
     <!-- Objective -->
@@ -190,9 +190,8 @@
   <h3 class="major">Behavior Decision Mapping</h3>
 
   <p>
-    Boe-Bot King uses a deterministic sensor-to-action mapping strategy.
-    Each motion command is selected directly based on the real-time state
-    of the QTI and whisker sensors, ensuring fast response and predictable behavior.
+    Instead of using a complex state machine, Boe-Bot King relies on a direct sensor-to-action mapping strategy. 
+    Each motion decision is selected based on the real-time state of the QTI and whisker sensors, resulting in fast, predictable behavior and easier debugging during hardware testing.
   </p>
 
   <table class="decision-table">
@@ -249,8 +248,9 @@
         <section><h3 class="major">Control Logic & Behaviors</h3>
         <p>
           The robot operates using a reactive control strategy in which motor commands
-          are selected based on real-time sensor readings. Each sensor condition maps
-          directly to a motion behavior.
+          are selected based on real-time sensor readings.
+          
+          Each behavior is intentionally simple, which reduces ambiguity during testing and makes hardware-related issues easier to isolate.
         </p>
 
         <ul>
@@ -282,9 +282,12 @@
     <!-- Software Architecture -->
     <h3 class="major">Software Architecture</h3>
     <p>
-      The control program is organized into modular subroutines, each responsible
-      for a specific motion behavior. Sensor states are evaluated continuously,
-      and the appropriate subroutine is invoked without blocking execution.
+    
+      The software is organized into modular subroutines, each responsible for a single motion behavior. 
+      Sensor states are evaluated continuously, and the appropriate routine is executed without blocking the main loop.
+
+      This structure supports rapid iteration, repeatable behavior, and clear separation between sensing and actuation logic 
+      an approach commonly used in embedded robotics systems.
     </p>
     <p>
       Pulse counters were used to regulate turning angles and prevent over-rotation,
@@ -305,17 +308,19 @@
     <!-- Challenges -->
     <h3 class="major">Engineering Challenges</h3>
     <ul>
-      <li>Inconsistent QTI sensor readings → sensor height adjusted using washers</li>
-      <li>Over-rotation during turns → calibrated pulse counters</li>
-      <li>Software logic errors → extensive on-hardware debugging</li>
+      <li>Inconsistent QTI sensor readings → sensor height adjusted using washers and also the alignment was adjusted as well</li>
+      <li>Over-rotation during turns → calibrated pulse counters and timing</li>
+      <li>Software logic errors → resolved through on-hardware debugging</li>
+      These challenges highlighted how small physical changes can have a large impact on autonomous behavior.
     </ul>
+    
 
     <!-- Lessons -->
     <h3 class="major">Lessons Learned</h3>
     <p>
-      This project reinforced the importance of precise sensor placement,
-      modular embedded software design, and iterative hardware–software
-      integration in autonomous systems.
+      This project reinforced the importance of precise sensor placement, modular embedded software design, and iterative hardware-software integration.
+
+      It also showed that simple control logic can outperform more complex approaches when reliability and predictability matter most.
     </p>
 
     <!-- Media & Code -->
@@ -339,6 +344,16 @@
   </div>
 </div>
   </section>
+
+  <section class="wrapper">
+      <div class="inner">
+        <h2>Conclusion</h2>
+       <p>
+         Boe-Bot King represents my first deep exposure to autonomous behavior design. The lessons learned here — especially around sensor reliability and reactive control  directly influenced later projects such as AfroBoat and AFROBOT,
+         where these principles were expanded into layered behavioral architectures and full system integration.
+         </p>
+      </div>
+    </section>
 
   <!-- Footer -->
 
@@ -384,6 +399,7 @@
 </body>
 
 </html>
+
 
 
 
