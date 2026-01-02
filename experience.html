@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title> Experience | Mouhameth Ba</title>
   <meta charset="utf-8" />
+  <title> Experience | Mouhameth Ba</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -49,6 +50,173 @@
   cursor: pointer;
   z-index: 6px;
 }
+
+ 
+    .skills-section {
+      padding: 3rem 0;
+    }
+    
+    .skills-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .skills-category {
+      margin-bottom: 3rem;
+    }
+    
+    .skills-category h3 {
+      color: #5bc0de;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(91, 192, 222, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+    }
+    
+    .skill-level {
+      font-size: 0.85rem;
+      color: #999;
+      font-weight: 600;
+    }
+
+      /* Skill Tags (Alternative Style) */
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      background: rgba(91, 192, 222, 0.1);
+      border: 2px solid rgba(91, 192, 222, 0.3);
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .skill-tag:hover {
+      background: rgba(91, 192, 222, 0.2);
+      border-color: #5bc0de;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(91, 192, 222, 0.3);
+    }
+    
+    .skill-tag .icon {
+      font-size: 1.2rem;
+    }
+    
+    .skill-tag .proficiency {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-left: 0.3rem;
+    }
+    
+    .prof-expert { background: #10b981; box-shadow: 0 0 8px #10b981; }
+    .prof-advanced { background: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
+    .prof-intermediate { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+    .prof-learning { background: #8b5cf6; box-shadow: 0 0 8px #8b5cf6; }
+    
+    /* Legend */
+    .skills-legend {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    
+    /* Interactive Hover Cards */
+    .skill-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-card {
+      background: rgba(255,255,255,0.03);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .skill-card:hover {
+      border-color: #5bc0de;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(91, 192, 222, 0.2);
+    }
+    
+    .skill-card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .skill-card h4 {
+      color: #5bc0de;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-card .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+    }
+    
+    .skill-card .skill-list li {
+      padding: 0.3rem 0;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    
+    .skill-card .skill-list li::before {
+      content: "→ ";
+      color: #5bc0de;
+      font-weight: bold;
+    }
 </style>
 </head>
 
@@ -139,29 +307,35 @@
                     <section>
                         <h3 class="major">Education</h3>
                        <p>
-                            <strong>B.S. Mechatronics & Robotics Systems Engineering</strong><br>
-                            Concentration: Electrical Engineering<br>
+                            <strong>B.S. Mechatronics & Robotics Systems Engineering<br>
+                            with a concentration in Electrical Engineering<br></strong>
+                            <em>University of Detroit Mercy - Detroit, MI</em><br>
+
                             <em>Expected Graduation: Fall 2027</em>
+                          </p>
+                           <strong>Master in Electrical  & <br>
+                            Computer Science Engineering<br></strong>
+                            <em>University of Detroit Mercy - Detroit, MI</em><br>
+
+                            <em>Expected Graduation: Fall 2028</em>
                           </p>
                           
                           <p>
                             <strong>Associate Degrees</strong><br>
                             <em>Oakland Community College — Auburn Hills, MI</em><br>
-                            <em>Graduated 2024</em>
-                          </p>
+                            <em>Graduated Winter 2025</em>
                           <ul>
+                            <li>Associate in Pre-Engineering</li>
                             <li>Associate of Applied Science</li>
                             <li>Associate of Technological Science</li>
-                            <li>Associate of Science</li>
-                          </ul>
+                          </ul></p>
                           
                           <p>
                             <strong>Technical Degree in Mechatronics & Robotics</strong><br>
                             <em>Vincennes University — Vincennes, IN</em><br>
                             <em>Graduated 2024</em>
-                          </p>
 
-                             <li>Degree in Mechantronics and Robotics</li>
+                             <br>Degree in Mechantronics and Robotics</br>
                              <button id="open-boebot-chart" class="button primary">
                               View U.S. Department of Labor Certification
                                   </button>
@@ -179,10 +353,11 @@
                               </div>      
                         </p>
                         
-                      <ul>
+    <h3 class="major" style="text-align: left;">Core Classes</h3>
+                          <ul>
                           <li>Programming (C / C++)</li>
                           <li>Electrical & Computer Engineering Fundamentals</li>
-                          <li>Calculus I–III</li>
+                          <li>Calculus I, II & III</li>
                           <li>Engineering Physics I & II</li>
                           <li>Statics & Dynamics</li>
                           <li>Mechanics of Materials</li>
@@ -191,19 +366,78 @@
                     </section>
 
                     <!-- SKILLS -->
-                    <section>
-                        <h3 class="major">Technical Skills</h3>
-                        <ul class="alt">
-                          <li>Industrial Automation & Robotics Systems</li>
-                          <li>PLC-Controlled Equipment & Sensors</li>
-                          <li>Electrical Diagnostics & Troubleshooting</li>
-                          <li>Mechanical Systems & Preventive Maintenance</li>
-                          <li>FactoryTalk, Studio 5000, RSLogix</li>
-                          <li>Oscilloscopes & Diagnostic Tools</li>
-                          <li>Advanced Microsoft Office</li>
-                        </ul>
+                    <section class="wrapper">
+  <div class="inner">
+    <h2 class="major" style="text-align: center;">Core Competencies</h2>
+    
+    <div class="skill-cards">
+      
+      <div class="skill-card">
+        <span class="icon">🤖</span>
+        <h4>Robotics & Automation</h4>
+        <ul class="skill-list">
+          <li>Autonomous systems design</li>
+          <li>Autonomous Drive</li>
+          <li>Robotics control systems</li>
+          <li>heavy-duty six-axis robotic arms</li>
+          <li>Sensor integration</li>
+          <li>Behavior architectures</li>
+          <li>Industrial conveyors</li>
+          <li>Electrical Cabinets</li>
+          <li>Pneumatics Systems</li>
+        </ul>
+      </div>
 
-                    </section>
+      <div class="skill-card">
+        <span class="icon">💻</span>
+        <h4>Programming</h4>
+        <ul class="skill-list">
+          <li>C/C++/Python</li>
+          <li>MATLAB/Simulink</li>
+          <li>PLC programming (Ladder Logic, Structured Text)</li>
+          <li>Microcontroller programming</li>
+          <li>FactoryTalk, Studio 5000, RSLogix</li>
+          <li>HMI development</li>
+          <li>Data analysis</li>
+          <li>Advanced Microsoft Office</li>
+          <li>Embedded systems</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <span class="icon">⚡</span>
+        <h4>Electronics</h4>
+        <ul class="skill-list">
+          <li>Analog circuits</li>
+          <li>Signal conditioning</li>
+          <li>Motor control</li>
+          <li>System diagnostics</li>
+          <li>Power electronics</li>
+          <li>Sensors and actuators</li>
+          <li>AC/DC Motor</li>
+          <li>Oscilloscopes & Diagnostic Tools</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <span class="icon">🔧</span>
+        <h4>Industrial Systems</h4>
+        <ul class="skill-list">
+          <li>FactoryTalk/RSLogix</li>
+          <li>Preventive maintenance</li>
+          <li>Root cause analysis</li>
+          <li>Technical documentation</li>
+          <li>Safety protocols</li>
+          <li>Process Mapping</li>
+          <li>Lean manufacturing</li>
+          <li>Data Analytics Software</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
                       <section>
                         <h3 class="major">Engineering Growth Path</h3>
@@ -289,6 +523,32 @@
   }
 </script>
 
-</body>
+<script>
+// Animate progress bars when they come into view
+document.addEventListener('DOMContentLoaded', function() {
+  const skillBars = document.querySelectorAll('.skill-progress');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.style.width; // Trigger animation
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  skillBars.forEach(bar => {
+    bar.style.width = '0%'; // Start at 0
+    observer.observe(bar);
+    
+    // Animate to target width
+    setTimeout(() => {
+      const targetWidth = bar.getAttribute('style').match(/width:\s*(\d+)%/)[1];
+      bar.style.width = targetWidth + '%';
+    }, 100);
+  });
+});
+</script>
 
+
+</body>
 </html>
