@@ -26,93 +26,370 @@
   
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+		
+	<head>
+	<style>
+    
+    .contact-hero {
+      text-align: center;
+      padding: 2rem 0 3rem 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+    
+    .contact-hero h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-hero p {
+      font-size: 1.1rem;
+      color: #999;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Looking For Section */
+    .looking-for-section {
+      background: rgba(91, 192, 222, 0.08);
+      border-left: 4px solid #5bc0de;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .looking-for-section h3 {
+      color: #5bc0de;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .opportunities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .opportunity-card {
+      background: rgba(255,255,255,0.03);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid rgba(91, 192, 222, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .opportunity-card:hover {
+      border-color: #5bc0de;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(91, 192, 222, 0.2);
+    }
+    
+    .opportunity-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .opportunity-card h4 {
+      color: #5bc0de;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .opportunity-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* Best Way to Reach */
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .contact-method {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      border-radius: 12px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-method:hover {
+      border-color: #5bc0de;
+      transform: scale(1.05);
+    }
+    
+    .contact-method .icon-circle {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto;
+      font-size: 2rem;
+    }
+    
+    .contact-method h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+    
+    .contact-method p {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-method .button {
+      margin: 0;
+    }
+    
+    /* Response Time Badge */
+    .response-badge {
+      display: inline-block;
+      background: #10b981;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    
+    /* Availability Status */
+    .availability-status {
+      text-align: center;
+      padding: 1.5rem;
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .availability-status .status-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #10b981;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .availability-status strong {
+      color:  #ffffff;;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<body class="is-preload">
+  <div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Mouhameth Ba</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">Mouhameth Ba</a></h1>
+      <nav><a href="#menu">Menu</a></nav>
+    </header>
 
-				<!-- Menu -->
-					<nav id="menu">
-					<div class="inner">
-						<h2>Menu</h2>
-						<ul class="links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="bio.html">Bio</a></li>
-						<li><a href="projects.html">Projects</a></li>
-						<li><a href="experience.html">Experience</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						</ul>
-						<a href="#" class="close">Close</a>
-					</div>
-					</nav>
+    <!-- Menu -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bio.html">Bio</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+      </div>
+    </nav>
 
+    <!-- Main Content -->
+    <section id="wrapper">
+      
+      <!-- Hero Section -->
+      <div class="wrapper">
+        <div class="inner">
+          <div class="contact-hero">
+            <h2 class="major">Let's Connect</h2>
+            <p>
+              I'm always interested in discussing robotics, automation systems, 
+              and engineering opportunities. Whether you're recruiting, collaborating, 
+              or just want to talk technical – reach out!
+            </p>
+          </div>
 
-                                            
+          <!-- Availability Status -->
+          <div class="availability-status">
+            <span class="status-dot"></span>
+            <strong>Currently Available for:</strong> Co-op positions, project collaborations, 
+            and technical discussions
+          </div>
 
+          <!-- What I'm Looking For -->
+          <div class="looking-for-section">
+            <h3>
+              🎯 What I'm Looking For
+            </h3>
+            
+            <div class="opportunities-grid">
+              <div class="opportunity-card">
+                <span class="icon">🏢</span>
+                <h4>Co-op Positions</h4>
+                <p>
+                  Internships or co-op roles in robotics, mechatronics, or automation 
+                  where I can apply hands-on industrial experience to engineering challenges.
+                </p>
+              </div>
 
+              <div class="opportunity-card">
+                <span class="icon">🤝</span>
+                <h4>Project Collaborations</h4>
+                <p>
+                  Working with other engineers on robotics projects, especially in 
+                  autonomous systems, embedded control, or industrial automation.
+                </p>
+              </div>
 
-                    			<!-- Footer -->
+              <div class="opportunity-card">
+                <span class="icon">💬</span>
+                <h4>Technical Discussions</h4>
+                <p>
+                  Always happy to discuss subsumption architectures, sensor integration, 
+                  PLC systems, or real-world robotics troubleshooting.
+                </p>
+              </div>
 
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Message when someone wants to contact me.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
+              <div class="opportunity-card">
+                <span class="icon">📚</span>
+                <h4>Mentorship & Learning</h4>
+                <p>
+                  Seeking guidance from experienced engineers and opportunities to 
+                  learn from those working on advanced robotics systems.
+                </p>
+              </div>
+            </div>
+          </div>
 
-							<ul class="contact">
-								<li class="icon solid fa-envelope">
-									<a href="mailto:ibnoury17@gmail.com">ibnoury17@gmail.com</a>
-								</li>
-								<li class="icon brands fa-linkedin">
-									<a href="https://www.linkedin.com/in/mouhameth-ba-588b82207/" target="_blank">
-									LinkedIn
-									</a>
-								</li>
-								</ul>
+          <!-- Best Ways to Reach Me -->
+          <h2 class="major" style="text-align: center; margin-top: 4rem;">
+            Best Ways to Reach Me
+          </h2>
 
-							<ul class="copyright">
-								<li>&copy; day tarr rek waye dogne si gueneu. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+          <div class="contact-methods">
+            
+            <!-- Email -->
+            <div class="contact-method">
+              <div class="icon-circle">📧</div>
+              <h3>Email</h3>
+              <p>For detailed inquiries, project discussions, or formal opportunities</p>
+              <a href="mailto:ibnoury17@gmail.com" class="button primary">
+                ibnoury17@gmail.com
+              </a>
+              <span class="response-badge">Response: 24-48 hours</span>
+            </div>
 
-			</div>
+            <!-- LinkedIn -->
+            <div class="contact-method">
+              <div class="icon-circle">💼</div>
+              <h3>LinkedIn</h3>
+              <p>Professional networking, quick messages, and staying connected</p>
+              <a href="https://www.linkedin.com/in/mouhameth-ba-588b82207/" 
+                 target="_blank" 
+                 class="button primary">
+                Connect on LinkedIn
+              </a>
+              <span class="response-badge">Response: 12-24 hours</span>
+            </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+          </div>
 
-	</body>
+          <!-- Alternative: Contact Form (Optional) -->
+          <div style="margin-top: 4rem;">
+            <h3 class="major" style="text-align: center;">Quick Message</h3>
+            <p style="text-align: center; color: #999; margin-bottom: 2rem;">
+              Prefer a form? Send me a message below and I'll get back to you soon.
+            </p>
 
+            <!-- IMPORTANT: Replace action with Formspree or similar -->
+            <form method="post" action="https://formspree.io/f/xnjnaqjn">
+              <div class="fields">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" required />
+                </div>
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <input type="text" name="subject" id="subject" />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" rows="6" required></textarea>
+                </div>
+              </div>
+              <ul class="actions" style="justify-content: center;">
+                <li><input type="submit" value="Send Message" class="primary" /></li>
+              </ul>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="inner">
+        <h2 class="major">Connect</h2>
+        <ul class="contact">
+          <li class="icon solid fa-envelope">
+            <a href="mailto:ibnoury17@gmail.com">ibnoury17@gmail.com</a>
+          </li>
+          <li class="icon brands fa-linkedin">
+            <a href="https://www.linkedin.com/in/mouhameth-ba-588b82207/" target="_blank">
+              LinkedIn Profile
+            </a>
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Mouhameth Ba. All rights reserved.</li>
+          <li>Dina metti, waaye dinagnu am ndam</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
 </html>
