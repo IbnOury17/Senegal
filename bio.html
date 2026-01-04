@@ -26,6 +26,179 @@
   
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+  <style>
+      .heritage-section {
+      background: linear-gradient(135deg, 
+        rgba(0, 159, 73, 0.1) 0%,    /* Senegal flag green */
+        rgba(252, 209, 22, 0.1) 50%,  /* Senegal flag yellow */
+        rgba(250, 2, 11, 0.1) 100%   /* Senegal flag red */
+      );
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      border-left: 6px solid #009F49;
+    }
+    
+    .heritage-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .heritage-header h2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .heritage-header .subtitle {
+      font-size: 1.1rem;
+      color: #999;
+      font-style: italic;
+    }
+    
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .heritage-card {
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 2px solid rgba(0, 159, 73, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .heritage-card:hover {
+      border-color: #009F49;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 159, 73, 0.2);
+    }
+    
+    .heritage-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .heritage-card h3 {
+      color: #009F49;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    /* Wolof Language Box */
+    .wolof-section {
+      background: rgba(0, 159, 73, 0.1);
+      border: 2px solid #009F49;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .wolof-phrase {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #009F49;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    
+    .wolof-translation {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    
+    .wolof-context {
+      font-size: 0.95rem;
+      color: #999;
+      line-height: 1.6;
+    }
+    
+    /* Journey Timeline */
+    .journey-timeline {
+      position: relative;
+      padding: 2rem 0;
+      margin: 2rem 0;
+    }
+    
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 50px;
+      bottom: -50px;
+      width: 2px;
+      background: linear-gradient(to bottom, #009F49, #FCD116, #E51D25);
+    }
+    
+    .timeline-item:last-child::before {
+      display: none;
+    }
+    
+    .timeline-dot {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #009F49 0%, #FCD116 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      border: 4px solid rgba(0,0,0,0.3);
+      z-index: 1;
+      position: relative;
+    }
+    
+    .timeline-content {
+      flex: 1;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border-left: 3px solid #009F49;
+    }
+    
+    .timeline-year {
+      color: #FCD116;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-content h4 {
+      color: #009F49;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Flag Colors Accent */
+    .flag-accent {
+      display: flex;
+      height: 6px;
+      margin: 2rem 0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .flag-accent div {
+      flex: 1;
+    }
+    
+    .flag-green { background: #009F49; }
+    .flag-yellow { background: #FCD116; }
+    .flag-red { background: #E51D25; }
+  </style>
 </head>
 
 <body class="is-preload">
@@ -70,35 +243,43 @@
 
       <!-- INTRO -->
       <section>
-        <section>
-  <h3 class="major">Who I Am</h3>
-            <p>
-              My name is <strong>Mouhameth Ba</strong>. I am originally from Senegal, West Africa,
-              and have been living in the United States since 2020. I earned three associate degrees at Oakland Community College.
-              I am currently a Mechatronics & Robotics Systems Engineering student with a
-              concentration in Electrical Engineering, while working as a
-              <strong>Mechatronics & Robotics Technician</strong> on the Amazon Robotics account through CBRE.
-            </p>
-          
-            <p>
-              In my role, I work daily with automated robotic systems, conveyors, sensors,
-              and electrical equipment in a high-availability industrial environment.
-              This hands-on experience allows me to see how complex systems behave in the real world,
-              not just how they are supposed to work on paper.
-            </p>
-          
-            <p>
-              My background sits at the intersection of
-              <strong>hands-on troubleshooting</strong> and
-              <strong>engineering-level thinking</strong>.
-              I enjoy understanding not only how to fix systems, but how they are designed,
-              controlled, and improved over time.
-            </p>
-</section>
 
-    
-      <!-- ARTICLE -->
-      <section>
+  <h3 class="major">Who I Am</h3>
+                  <p>
+      My name is Mouhameth Ba, and I am originally from Senegal, West Africa.
+      I grew up learning the importance of resourcefulness and practical problem-solving 
+      skills that continue to shape how I approach engineering today. In 2020, 
+      I moved to the United States to pursue an engineering education while 
+      staying closely connected to my roots.
+      </p>
+      <p>
+        I am currently a Mechatronics & Robotics Systems Engineering student 
+        with a concentration in Electrical Engineering at Detroit Mercy University,
+        where I transferred in Fall 2025. Before transferring, I earned three associate 
+        degrees from Oakland Community College in Technological Science, 
+        Applied Science, and General Studies, building a strong technical and academic foundation.
+      </p>
+      
+      <p>
+        Alongside my studies, I work as a Mechatronics & Robotics Technician 
+        supporting the Amazon Robotics account through CBRE. In this role, 
+        I work daily with automated robotic systems, conveyors, sensors, and 
+        electrical equipment in a high-availability industrial environment. 
+        This experience has given me a practical understanding of how 
+        complex systems operate under real-world constraints 
+        where reliability, safety, and uptime truly matter.
+      </p>
+        What drives me most is working at the intersection of hands-on 
+        troubleshooting and engineering-level thinking. I enjoy not only 
+        fixing systems, but understanding why they fail, how they are designed, 
+        and how they can be improved over time. My journey—from Senegal 
+        to the United States, and from technician to engineer—has strengthened 
+        my adaptability, resilience, and ability to bridge practical experience with engineering theory.
+      </p>
+      <P>
+        I am motivated to grow into an engineer who designs scalable, reliable robotics and automation 
+        systems that solve real-world problems and improve lives.
+
   <h3 class="major">Featured Article</h3>
   <p>
     An external article from OCC highlighting my background, journey, and professional path.
@@ -115,22 +296,8 @@
 
       <!-- PROFESSIONAL FOCUS -->
       <section>
-        <h3 class="major">Professional Focus</h3>
-        <ul>
-          <li>Industrial automation and robotics systems</li>
-          <li>Electrical and mechanical troubleshooting</li>
-          <li>Embedded systems and control fundamentals</li>
-          <li>Engineering-driven problem solving</li>
-        </ul>
-      </section>
-
-      <!-- WHY ENGINEERING -->
-      <section>
-        <p>
-          My technical interests and professional focus areas include:
-        </p>
-
-        <p>
+        <h3 class="major">🛠️ My technical interests and professional focus areas</h3>
+          <p>
             Working in highly automated facilities exposed me to the complexity behind
             large-scale robotics systems operating at scale.
             Rather than focusing only on maintenance, I became increasingly curious about
@@ -144,11 +311,11 @@
             and robotics architectures that must perform consistently in real-world environments.
         </p>
 
-      </section>
-
-      <!-- SKILLS SNAPSHOT -->
-      <section>
-        <h3 class="major">Skills Snapshot</h3>
+      <p>
+        I don't just want technology to work in ideal conditions – it should 
+        work when conditions are imperfect.
+      </p>
+      <h3 class="major">Skills Snapshot</h3>
         <ul class="alt">
           <li>Robotics & Automation Systems</li>
           <li>PLC-controlled Equipment & Sensors</li>
@@ -157,22 +324,36 @@
           <li>C / C++ Programming Fundamentals</li>
           <li>Oscilloscopes & Test Equipment</li>
         </ul>
-      </section>
 
-      <!-- FUTURE GOALS -->
+        <section>
+        <h3 class="major">Professional Focus</h3>
+        <ul>
+          <li>Industrial automation and robotics systems</li>
+          <li>Electrical and mechanical troubleshooting</li>
+          <li>Embedded systems and control fundamentals</li>
+          <li>Engineering-driven problem solving</li>
+        </ul>
+      </section>
+  
+
       <section>
-        <h3 class="major">Looking Forward</h3>
+          <h3 class="major">🎯Future Vision</h3>
         <p>
-          My goal is to grow into an engineering role where I can contribute to the
-          design, development, and optimization of robotics and automation systems.
-          This portfolio documents my academic projects, hands-on work,
-          and technical growth as I continue that transition.
+          I am driven to contribute to technology that solves real-world infrastructure 
+          challenges, particularly in automation, robotics, and industrial systems.
+          My aim is to grow into an engineering role focused on the design, development, and 
+          optimization of robotic and automated systems. This portfolio highlights my academic 
+          projects, hands-on experience, and ongoing technical development as I progress toward that goal.
         </p>
-
-      </section>
-
-      <!-- CTA -->
-      <section>
+        This portfolio highlights my academic projects, hands-on experience, and 
+        ongoing technical development as I progress toward that goal. Ultimately, 
+        I seek to build scalable, reliable systems that adapt to real needs and improve quality of life.
+        <p>
+          My goal is to become an engineer who builds systems that scale, adapt, 
+          and improve lives through reliable technology.
+        </p>
+        <!-- CTA -->
+      <div>
         <ul class="actions">
           <li>
             <a href="projects.html" class="button primary">
@@ -185,10 +366,123 @@
             </a>
           </li>
         </ul>
-      </section>
+        </div>
+    </section>
 
-    </div>
+      
+
+ <!-- Journey Timeline -->
+
+ <section class="heritage-section">
+     <div class="flag-accent">
+    <div class="flag-green"></div>
+    <div class="flag-yellow"></div>
+    <div class="flag-red"></div>
   </div>
+  <h3 class="major" style="text-align: center; margin-top: 3rem;">
+    My Journey
+  </h3>
+
+  <div class="journey-timeline">   
+    <div class="timeline-item">
+      <div class="timeline-dot">🇸🇳</div>
+      <div class="timeline-content">
+        <div class="timeline-year">Born & Raise</div>
+        <h4>Growing Up in Senegal</h4>
+        <p>
+          Born and raised in Dakar, Senegal. Early exposure to practical 
+          problem-solving and seeing how systems work (or break) in 
+          resource-constrained environments.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">✈️</div>
+      <div class="timeline-content">
+        <div class="timeline-year">2020</div>
+        <h4>Moving to the United States</h4>
+        <p>
+          Relocated to Michigan to pursue engineering education. Started 
+          working full-time while attending community college, learning to 
+          balance work, school, and adaptation to a new culture.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">🎓</div>
+      <div class="timeline-content">
+        <div class="timeline-year">2020 - 2024</div>
+        <h4>Community College & Technical Education</h4>
+        <p>
+          Completed three associate degrees at Oakland Community College 
+          and a technical degree in Mechatronics & Robotics at Vincennes 
+          University while working full-time.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">🤖</div>
+      <div class="timeline-content">
+        <div class="timeline-year">2024 - Present</div>
+        <h4>Robotics Technician & Engineering Student</h4>
+        <p>
+          Working as a Mechatronics & Robotics Technician at Amazon/CBRE 
+          while pursuing Bachelor's in Mechatronics & Robotics Systems 
+          Engineering. Building autonomous systems and gaining real-world 
+          industrial automation experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">🚀</div>
+      <div class="timeline-content">
+        <div class="timeline-year">Future</div>
+        <h4>Engineering & Global Impact</h4>
+        <p>
+          Continuing to develop expertise in autonomous systems and industrial 
+          automation. Long-term goal: contribute to technology solutions that 
+          address infrastructure and development challenges globally.
+        </p>
+     </div>
+  </div>
+
+
+
+              <!-- Wolof Language Section -->
+          <div class="flag-accent">
+          </div>
+          <div class="wolof-section">
+            <h3 class="major">About the Footer Phrase</h3>
+            <div class="wolof-phrase">"Dina metti, waaye dinagnu ci Geneu"</div>
+            <div class="wolof-translation">
+              "It will be hard, but we will success"
+            </div>
+            <div class="wolof-context">
+              <p>
+                This Wolof proverb reflects a core value I carry from Senegal: 
+                meaningful engineering is never easy, but discipline and perseverance 
+                execution lead to success.
+              </p>
+              <p style="margin-top: 1rem;">
+                <strong>Wolof </strong> is one of the most widely spoken languages in 
+                Senegal, and this phrase appears in my portfolio footer as a reminder 
+                of why I do this work.
+              </p>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="flag-accent">
+        <div class="flag-green"></div>
+        <div class="flag-yellow"></div>
+        <div class="flag-red"></div>
+      </div>
+      </div>
 </section>
 
 
@@ -213,7 +507,6 @@
     </div>
   </section>
 
-</div>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
@@ -226,6 +519,3 @@
 </body>
 
 </html>
-
-
-
